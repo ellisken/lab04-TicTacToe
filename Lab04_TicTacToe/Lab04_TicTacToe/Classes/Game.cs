@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab04_TicTacToe.Classes
 {
-	class Game
+	public class Game
 	{
 		public Player PlayerOne { get; set; }
 		public Player PlayerTwo { get; set; }
@@ -31,9 +31,9 @@ namespace Lab04_TicTacToe.Classes
 		public Player Play()
 		{
 
-			//TODO: Complete this method and utilize the rest of the class structure to play the game.
+            //TODO: Complete this method and utilize the rest of the class structure to play the game.
 
-			/*
+            /*
 			 While there isn't a winner determined or too many turns have been taken,
 			 allow each player to see the board and take a turn.
 			 A turn consists of picking a position on the board, and then putting their appropriate marker
@@ -41,6 +41,23 @@ namespace Lab04_TicTacToe.Classes
 			 board so the next player can accurately choose. 
 			 Once a winner is determined, display the board and return a winner 
 			 */
+            int maxTurnCount = 8;
+            Player currentPlayer = null;
+            for(int i=0 ; i < maxTurnCount; i++)
+            {
+                Board.DisplayBoard();
+                //Get current player
+                currentPlayer = NextPlayer();
+                //Let player take turn
+                currentPlayer.TakeTurn(Board);
+                Board.DisplayBoard();
+                //If winner, break the loop and return 
+                if (CheckForWinner(Board)) break;
+                //Else, switch players
+                SwitchPlayer();
+            }
+            //Default return is null (signals a draw)
+            return currentPlayer;
 		}
 
 
@@ -76,8 +93,9 @@ namespace Lab04_TicTacToe.Classes
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
 
-				// TODO:  Determine a winner has been reached. 
-				// return true if a winner has been reached. 
+                // DONE:  Determine a winner has been reached. 
+                // return true if a winner has been reached. 
+                if (a == b && a == c) return true;
 			
 			}
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab04_TicTacToe.Classes
 {
-    class Player
+    public class Player
     {
 		public string Name { get; set; }
 		/// <summary>
@@ -38,7 +38,7 @@ namespace Lab04_TicTacToe.Classes
 
         /// <summary>
         /// Determines coordinates on the board based off of the number that
-        /// the player selects
+        /// the player selects. Static method for Player class.
         /// </summary>
         /// <param name="position">The number of the spot on the board the player selected</param>
         /// <returns>The position on the board matching the user's selection if it exists</returns>
