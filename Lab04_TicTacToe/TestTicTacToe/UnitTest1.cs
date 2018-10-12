@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using Lab04_TicTacToe.Classes;
 
 namespace TestTicTacToe
 {
@@ -13,9 +14,10 @@ namespace TestTicTacToe
          */
 
         [Fact]
-        public void Test1()
+        public void TestDisplayBoard()
         {
-
+            Board testBoard = new Board();
+            testBoard.DisplayBoard(); 
         }
     }
 }
