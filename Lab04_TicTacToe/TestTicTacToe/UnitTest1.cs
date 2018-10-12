@@ -68,5 +68,24 @@ namespace TestTicTacToe
 
             Assert.True(testGame.CheckForWinner(testGame.Board));
         }
+
+        //Test fr switch in players between turns
+        [Fact]
+        public void TestForCorrectSwitchAfterTurns()
+        {
+            //Set up test game
+            Player player1 = new Player();
+            player1.Name = "Foo";
+            player1.IsTurn = true;
+            Player player2 = new Player();
+            player2.Name = "Bar";
+
+            Game testGame = new Game(player1, player2);
+            Player playerBeforeSwitch = testGame.NextPlayer();
+            testGame.SwitchPlayer();
+            Player playerAfterSwitch = testGame.NextPlayer();
+
+            Assert.NotEqual(playerBeforeSwitch.Name, playerAfterSwitch.Name);
+        }
     }
 }
