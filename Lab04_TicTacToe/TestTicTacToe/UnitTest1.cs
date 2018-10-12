@@ -8,7 +8,7 @@ namespace TestTicTacToe
     {
         /* REQUIRED TESTS:
          * DONE: Given a game board, test for winners (3 different tests) 
-         * TODO: Test for switch in players between turns
+         * DONE: Test for switch in players between turns
          * TODO: Confirm player position correlates to correct index of the board array
          * TODO: Create one other test of your own
          */
