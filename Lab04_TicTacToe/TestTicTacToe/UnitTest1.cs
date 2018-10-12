@@ -7,10 +7,10 @@ namespace TestTicTacToe
     public class UnitTest1
     {
         /* REQUIRED TESTS:
-         * Given a game board, test for winners (3 different tests) [Theory]
-         * Test for switch in players between turns
-         * Confirm player position correlates to correct index of the board array
-         * Create one other test of your own
+         * DONE: Given a game board, test for winners (3 different tests) 
+         * TODO: Test for switch in players between turns
+         * TODO: Confirm player position correlates to correct index of the board array
+         * TODO: Create one other test of your own
          */
         
         //Test CheckForWinner with different boards
@@ -32,7 +32,6 @@ namespace TestTicTacToe
 
             Assert.False(testGame.CheckForWinner(testGame.Board));
         }
-
         [Fact]
         public void TestForWinnerWithWin1()
         {

@@ -27,33 +27,20 @@ namespace Lab04_TicTacToe.Classes
 		/// <summary>
 		/// Activate the Play of the game
 		/// </summary>
-		/// <returns>Winner</returns>
+		/// <returns>Reference to winner player, else returns ref to null</returns>
 		public Player Play()
 		{
 
-            //TODO: Complete this method and utilize the rest of the class structure to play the game.
-
-            /*
-			 While there isn't a winner determined or too many turns have been taken,
-			 allow each player to see the board and take a turn.
-			 A turn consists of picking a position on the board, and then putting their appropriate marker
-			 in the board. Be sure to display the board after every turn to show the most up to date 
-			 board so the next player can accurately choose. 
-			 Once a winner is determined, display the board and return a winner 
-			 */
-            int maxTurnCount = 8;
+            //DONE: Complete this method and utilize the rest of the class structure to play the game.
+            int maxTurnCount = 9;
             Player currentPlayer = null;
             for(int i=0 ; i < maxTurnCount; i++)
             {
                 Board.DisplayBoard();
-                //Get current player
                 currentPlayer = NextPlayer();
-                //Let player take turn
                 currentPlayer.TakeTurn(Board);
                 Board.DisplayBoard();
-                //If winner, break the loop and return 
                 if (CheckForWinner(Board)) break;
-                //Else, switch players
                 SwitchPlayer();
             }
             //Default return is null (signals a draw)
