@@ -30,7 +30,7 @@ namespace Lab04_TicTacToe.Classes
                 {
                     Console.Write("|{0}| ", GameBoard[i, j]);
                 }
-                Console.WriteLine("/n");
+                Console.WriteLine("\n");
             }
 		}
 	}

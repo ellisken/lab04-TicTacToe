@@ -34,17 +34,19 @@ namespace Lab04_TicTacToe.Classes
             //DONE: Complete this method and utilize the rest of the class structure to play the game.
             int maxTurnCount = 9;
             Player currentPlayer = null;
-            for(int i=0 ; i < maxTurnCount; i++)
+            int i = 0;
+            for(i=0 ; i < maxTurnCount; i++)
             {
                 Board.DisplayBoard();
                 currentPlayer = NextPlayer();
                 currentPlayer.TakeTurn(Board);
-                Board.DisplayBoard();
                 if (CheckForWinner(Board)) break;
                 SwitchPlayer();
             }
             //Default return is null (signals a draw)
-            return currentPlayer;
+            Board.DisplayBoard();
+            if (i == 9) return null;
+            else return currentPlayer;
 		}
 
 
