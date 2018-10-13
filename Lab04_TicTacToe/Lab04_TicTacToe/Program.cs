@@ -12,10 +12,6 @@ namespace Lab04_TicTacToe
 
 		static void PlayGame()
 		{
-            // TODO: Instantiate your players
-            // Create the Game
-            // Play the Game
-            // Output the winner
             Console.WriteLine("Welcome to Tic-Tac-Toe");
             
             //Set player attributes
@@ -33,10 +29,12 @@ namespace Lab04_TicTacToe
             playerOne.IsTurn = true;
             playerTwo.IsTurn = false;
 
+            //Initiate game play
             Game currentGame = new Game(playerOne, playerTwo);
 
             Player winner = currentGame.Play();
 
+            //Display game results
             if (winner != null)
             {
                 Console.WriteLine($"Congrats, {winner.Name}, you won the game!");
