@@ -5,14 +5,7 @@ using Lab04_TicTacToe.Classes;
 namespace TestTicTacToe
 {
     public class UnitTest1
-    {
-        /* REQUIRED TESTS:
-         * DONE: Given a game board, test for winners (3 different tests) 
-         * DONE: Test for switch in players between turns
-         * TODO: Confirm player position correlates to correct index of the board array
-         * TODO: Create one other test of your own
-         */
-        
+    {        
         //Test CheckForWinner with different boards
         [Fact]
         public void TestForWinnerNoWin()
@@ -95,6 +88,15 @@ namespace TestTicTacToe
             int boardPosition = 5;
             Position positionCoordinates = Player.PositionForNumber(boardPosition);
             Assert.True(positionCoordinates.Row == 1 && positionCoordinates.Column == 1);
+        }
+
+        //Test to confirm that non-existent position returns null when passed to PositionForNumber
+        [Fact]
+        public void TestNonexistentBoardPositionCoordinateIsNull()
+        {
+            int boardPosition = 10;
+            Position positionCoordinates = Player.PositionForNumber(boardPosition);
+            Assert.Null(positionCoordinates);
         }
     }
 }
