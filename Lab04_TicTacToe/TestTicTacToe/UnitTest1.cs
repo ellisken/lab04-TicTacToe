@@ -69,7 +69,7 @@ namespace TestTicTacToe
             Assert.True(testGame.CheckForWinner(testGame.Board));
         }
 
-        //Test fr switch in players between turns
+        //Test for switch in players between turns
         [Fact]
         public void TestForCorrectSwitchAfterTurns()
         {
@@ -86,6 +86,15 @@ namespace TestTicTacToe
             Player playerAfterSwitch = testGame.NextPlayer();
 
             Assert.NotEqual(playerBeforeSwitch.Name, playerAfterSwitch.Name);
+        }
+
+        //Test to confirm player position correlates to correct index of board
+        [Fact]
+        public void TestPositionCorrelatesToIndex()
+        {
+            int boardPosition = 5;
+            Position positionCoordinates = Player.PositionForNumber(boardPosition);
+            Assert.True(positionCoordinates.Row == 1 && positionCoordinates.Column == 1);
         }
     }
 }
