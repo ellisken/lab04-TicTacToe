@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab04_TicTacToe.Classes
 {
-    class Player
+    public class Player
     {
 		public string Name { get; set; }
 		/// <summary>
@@ -17,7 +17,12 @@ namespace Lab04_TicTacToe.Classes
 		/// </summary>
 		public bool IsTurn { get; set; }
 
-
+        /// <summary>
+        /// Prompts the user for a number that corresponds to the position on the board
+        /// they want to mark (re-prompting until a valid position has been chosen).
+        /// </summary>
+        /// <param name="board">Current game board</param>
+        /// <returns>The position selected by the user</returns>
 		public Position GetPosition(Board board)
 		{
 			Position desiredCoordinate = null;
@@ -31,7 +36,12 @@ namespace Lab04_TicTacToe.Classes
 
 		}
 
-
+        /// <summary>
+        /// Determines coordinates on the board based off of the number that
+        /// the player selects. Static method for Player class.
+        /// </summary>
+        /// <param name="position">The number of the spot on the board the player selected</param>
+        /// <returns>The position on the board matching the user's selection if it exists</returns>
 		public static Position PositionForNumber(int position)
 		{
 			switch (position)
@@ -50,7 +60,12 @@ namespace Lab04_TicTacToe.Classes
 			}
 		}
 
-	
+	    /// <summary>
+        /// If the coordinate on the board selected by the player is available, the value at that
+        /// spot is replaced with the player's marker. Otherwise, an "already occupied" message
+        /// is returned.
+        /// </summary>
+        /// <param name="board">Current game board</param>
 		public void TakeTurn(Board board)
 		{
 			IsTurn = true;

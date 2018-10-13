@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab04_TicTacToe.Classes
 {
-	class Game
+	public class Game
 	{
 		public Player PlayerOne { get; set; }
 		public Player PlayerTwo { get; set; }
@@ -27,20 +27,26 @@ namespace Lab04_TicTacToe.Classes
 		/// <summary>
 		/// Activate the Play of the game
 		/// </summary>
-		/// <returns>Winner</returns>
+		/// <returns>Reference to winner player, else returns ref to null</returns>
 		public Player Play()
 		{
 
-			//TODO: Complete this method and utilize the rest of the class structure to play the game.
-
-			/*
-			 While there isn't a winner determined or too many turns have been taken,
-			 allow each player to see the board and take a turn.
-			 A turn consists of picking a position on the board, and then putting their appropriate marker
-			 in the board. Be sure to display the board after every turn to show the most up to date 
-			 board so the next player can accurately choose. 
-			 Once a winner is determined, display the board and return a winner 
-			 */
+            //DONE: Complete this method and utilize the rest of the class structure to play the game.
+            int maxTurnCount = 9;
+            Player currentPlayer = null;
+            int i = 0;
+            for(i=0 ; i < maxTurnCount; i++)
+            {
+                Board.DisplayBoard();
+                currentPlayer = NextPlayer();
+                currentPlayer.TakeTurn(Board);
+                if (CheckForWinner(Board)) break;
+                SwitchPlayer();
+            }
+            //Default return is null (signals a draw)
+            Board.DisplayBoard();
+            if (i == 9) return null;
+            else return currentPlayer;
 		}
 
 
@@ -76,8 +82,9 @@ namespace Lab04_TicTacToe.Classes
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
 
-				// TODO:  Determine a winner has been reached. 
-				// return true if a winner has been reached. 
+                // DONE:  Determine a winner has been reached. 
+                // return true if a winner has been reached. 
+                if (a == b && a == c) return true;
 			
 			}
 
