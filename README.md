@@ -8,17 +8,17 @@ To play the game, you will need to clone the repository to your local machine an
 Kendra Ellis and Allisa LeBeuf pair programmed on this assignment
 
 # Visuals
-Game start:
+## 1. Game start:
 ![Initializing Game](assets/gameStart.PNG)
 
-Enter in the names for each player:
+## 2. Enter in the names for each player:
 ![Enter Player Name](assets/enterNames.PNG)
 
-Start game play (player 1 goes first):
+## 3. Start game play (player 1 goes first):
 ![Start Game](assets/startGamePlay.PNG)
 
-After player 1 goes, player 2 goes (players alternate until win or a draw):
+## 4. After player 1 goes, player 2 goes (players alternate until win or a draw):
 ![Player Two Turn](assets/firstTurnDone.PNG)
 
-When game concludes, game over message is displayed:
+## 5. When game concludes, game over message is displayed:
 ![Game Over](assets/gameOver.PNG)
